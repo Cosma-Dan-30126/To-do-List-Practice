@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-vue-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: node-vue-app
+  template:
+    metadata:
+      labels:
+        app: node-vue-app
+    spec:
+      containers:
+        - name: node-vue-app
+          image: dancosma11/vueapp:latest
+          ports:
+            - containerPort: 8080
+
+
